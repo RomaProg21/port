@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Игра на запоминание</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <style>
+        [v-cloak]{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div id="app" v-cloak>
+    <!--    <button @click="modOkno">Модальное окно</button>-->
+    <!--<div v-if="vidim" @click="nevidim" class="modOkn">-->
+
+
+    <!--</div>-->
+<span style="display: flex;text-align: center"><h4>Запомни 5 чисел!На это тебе дается 5 секунд.Введи в поле ввода числа, которые ты запомнил и узнай результат</h4></span>
+    <div v-if="tim1>0" style="display:flex;justify-content:center;color:grey"><h3>{{tim1}}</h3></div>
+    <div style="margin-top: 100px;" :class="className">
+    <div :style="{opacity:tim>4?'0':'1'}"  >
+
+    <h1 >
+    <span style="display:flex;justify-content: center;"  >
+    <span style="margin-left: 10px;">{{x1}}</span>
+    <span style="margin-left: 10px;">{{x2}}</span>
+    <span style="margin-left: 10px;">{{x3}}</span>
+    <span style="margin-left: 10px;">{{x4}}</span>
+    <span style="margin-left: 10px;">{{x5}}</span>
+    </span>
+    </h1>
+    </div>
+</div>
+    <div style="display:flex;justify-content: center;flex-direction: column;">
+
+    <button style="margin-bottom: 15px; margin-top: 15px;" class="btn btn-primary" @click="tim=0; this.btnClick = !this.btnClick;">Нажми</button>
+    <input @keypress.enter="resL" id="nw"  type="text" placeholder="Введите числа" class="inp" v-model="result" >
+        <button @click.once="resL" class="btn" style="margin-top: 15px">Результат</button>
+    </div>
+    <div style="display:flex;justify-content:center;"><h1 v-if="nolk">Ваш результат:{{res}}%</h1></div>
+
+</div>
+<script src="https://cdn.jsdelivr.net/lodash/4.17.4/lodash.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/vue@next"></script>
+<script src="add.js"></script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style1.css">
+    <style>
+        [v-cloak]{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div id="app" v-cloak >
+    <div class="dv">
+        <input type="text" placeholder="0" class="inp" v-model="inpV" @keydown.enter="calc" id="cen" >
+<button class="btn cl" v-for="(but,idx) in buts"
+        :key=idx
+        @click="inp(but)"
+>{{but}}</button>
+        <button class="cl op" v-for="(res,index) in operations"
+        :key="index"
+        @click="inp(res)">{{res}}</button>
+        <button class="cl op" @click="inpV=''">R</button>
+        <button class="cl op" @click="calc">=</button>
+
+    </div>
+</div>
+<script src="https://unpkg.com/vue@next"></script>
+<script src="add1.js"></script>
+</body>
+</html>

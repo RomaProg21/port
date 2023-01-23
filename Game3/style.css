@@ -1,0 +1,60 @@
+
+.wrap{
+
+background: #8d8d8d;
+    width: 300px;
+    margin: 0 auto;
+}
+.wrapIn{
+    width: 50px;
+    height: 50px;
+    position: relative;
+    background: #ccc;
+    display: inline-block;
+    margin: 5px;
+    cursor:pointer;
+    transition: .4s;
+    transform-style: preserve-3d;
+}
+.niz{
+    display: flex;
+    justify-content: center;
+}
+.btn{
+    border:none;
+    color:white;
+    background: #42b983cc;
+    border-radius: 2px;
+    padding: 10px 30px ;
+    margin: 10px 0;
+    outline: none;
+}
+.btn:hover{
+    background: #42b983;
+}
+.itemActive{
+    background: #42b983cc;
+    transform: rotateX(180deg);
+}
+.btn:disabled{
+    opacity: 0.5;
+}
+.itemAn{
+    background: rgba(255, 18, 89, 0.8);
+    transform: rotateX(180deg);
+}
+.modOkno{
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background:rgba(0,0,0,0.4);
+    display: flex;
+    position: fixed;
+}
+.modOkn{
+    background: white;
+    margin: auto;
+    padding: 30px;
+}
+

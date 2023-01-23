@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        [v-cloak]{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<video autoplay loop muted class="bgvideo" id="bgvideo">
+    <source src="video.mp4" type="video/mp4"></source>
+</video>
+<div id="app" v-cloak style="margin-top: 50px;" >
+
+        <div class="wrap">
+            <span @click="select(mas.id)" :class="
+            'wrapIn '+ (mas.value ===1 && gameStatus===GAME_STATUS.PREVIEW || mas.clicked ? 'wrapIn itemActive' : '') +(st===false && mas.value===FIELD.EMPTY && psr===true ? 'itemAn' : '') + (mas.value===FIELD.FILLED && gameStatus===GAME_STATUS.FAIL ? 'itemActive' : '')
+" v-for="mas in mass"  :key="mas.id">
+            </span>
+        </div>
+    <div class="niz">
+    <h3>Сложность {{dif}}</h3>
+        </div>
+    <div style="display:flex;justify-content:center;">
+        <h3>Рекорд:{{scoped}}</h3>
+    </div>
+    <div style="display: flex;justify-content:center;margin: 10px;">
+        <input v-if="scoped>10" type="text" v-model="inputValue" @keypress="inpVal">
+    </div>
+
+    <div style="display:flex;justify-content:center;">
+    <button class="btn" @click="start" :disabled="gameStatus==GAME_STATUS.PREVIEW || timeWin===true || gameStatus===GAME_STATUS.STARTED">Начать</button>
+    </div>
+    <div v-if="infK" class="modOkno" @click.stop="infK=false">
+        <div class="modOkn" @click.stop="">
+            <h3>Разработчик:Рома Журавлев</h3>
+            <h3>Среда разработки:Vue JS</h3>
+            <audio src="Miy.mp3" autoplay="autoplay"></audio>
+
+
+
+
+        </div>
+    </div>
+
+
+
+</div>
+
+
+<script src="https://unpkg.com/vue@next"></script>
+<script src="add.js"></script>
+</body>
+</html>
